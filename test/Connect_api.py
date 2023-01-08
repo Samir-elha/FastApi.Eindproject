@@ -1,5 +1,5 @@
 import requests
-from todooo.main import app
+from todooo.app import app
 
 def get_weather_data(city):
     weather_api_key = "1b323313039c99c4df87eb09ce28fdcd"
