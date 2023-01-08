@@ -7,6 +7,7 @@
 ### OpenAPI docs
 
 Hieronder heb ik de openapi docs open met uitleg.
+
 <img width="464" alt="image" src="https://user-images.githubusercontent.com/91054513/211223541-24bff15f-3772-4e9f-bcdb-e06da869a2f8.png">
 
 ### GET /todo list
