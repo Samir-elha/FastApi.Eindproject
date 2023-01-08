@@ -1,0 +1,25 @@
+version: "3"
+services:
+  fastapi:
+    build: .
+    ports:
+      - 8081:8081
+    environment:
+      - DB_HOST=user
+      - SQLITE_PATH=/sqlite.db
+    volumes:
+      - .:/data
+      - ./db/sqlite.db:/sqlite.db
+      - ./db:/code/sqlitedb
+  # sqlite:
+  #   image: nouchka/sqlite3
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: secret
+  #     MYSQL_DATABASE: example
+  #   ports:
+  #     - 3306:3306
+  #   volumes:
+  #     - db:/bitnami/mongodb
+
+# volumes:
+#   db:
