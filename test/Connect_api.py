@@ -2,8 +2,8 @@ import requests
 from todooo.app import app
 
 def get_weather_data(city):
-    weather_api_key = "1b323313039c99c4df87eb09ce28fdcd"
-    endpoint = f"https://api.openweathermap.org/data/2.5/weather?q=W=Eindhoven&appid=1b323313039c99c4df87eb09ce28fdcd"
+    weather_api_key = "$API"
+    endpoint = f"$TOKENAPI"
     response = requests.get(endpoint)
     if response.status_code == 200:
         return response.json()
