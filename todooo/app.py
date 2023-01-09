@@ -4,6 +4,7 @@ from pydantic import BaseModel
 from sqlalchemy.orm import Session
 from fastapi.middleware.cors import CORSMiddleware
 
+# DATABASE_URL = "sqlite:///./sqlite.db"
 
 # Create ToDoRequest Base Model
 class ToDoRequest(BaseModel):
@@ -19,7 +20,7 @@ origins = [
     "http://localhost",
     "http://localhost:8080",
     "https://localhost",
-    "https://samir-elha2.github.io"
+    "https://samir3.github.io"
 ]
 
 app.add_middleware(
@@ -29,6 +30,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 @app.get("/")
 def root():
     return "todooo"

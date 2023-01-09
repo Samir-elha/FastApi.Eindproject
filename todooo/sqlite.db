@@ -1,0 +1,19 @@
+CREATE TABLE users (
+    id INTEGER PRIMARY KEY,
+    name TEXT,
+    email TEXT
+);
+
+CREATE TABLE posts (
+    id INTEGER PRIMARY KEY,
+    user_id INTEGER REFERENCES users(id),
+    title TEXT,
+    body TEXT
+);
+
+CREATE TABLE comments (
+    id INTEGER PRIMARY KEY,
+    post_id INTEGER REFERENCES posts(id),
+    user_id INTEGER REFERENCES users(id),
+    body TEXT
+);

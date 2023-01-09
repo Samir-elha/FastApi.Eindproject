@@ -10,7 +10,8 @@ services:
     volumes:
       - .:/data
       - ./db/sqlite.db:/sqlite.db
-      - ./db:/code/sqlitedb
+      - ./db:/code/sqlite.db
+
   # sqlite:
   #   image: nouchka/sqlite3
   #   environment:
