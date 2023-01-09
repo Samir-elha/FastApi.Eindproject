@@ -2,6 +2,8 @@ from fastapi import FastAPI, status, HTTPException
 from .database import Base, engine, ToDo
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
+from fastapi.middleware.cors import CORSMiddleware
+
 
 # Create ToDoRequest Base Model
 class ToDoRequest(BaseModel):
@@ -13,6 +15,20 @@ Base.metadata.create_all(engine)
 # Initialize app
 app = FastAPI()
 
+origins = [
+    "http://localhost",
+    "http://localhost:8080",
+    "https://localhost",
+    "https://samir-elha2.github.io"
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 @app.get("/")
 def root():
     return "todooo"
